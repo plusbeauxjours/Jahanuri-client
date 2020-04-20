@@ -4,7 +4,7 @@ import { ThemedStyledComponentsModule } from "styled-components";
 interface IThemeInterface {
   headerColor: string;
   bgColor: string;
-
+  color: string;
 }
 
 const {
