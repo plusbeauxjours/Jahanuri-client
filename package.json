@@ -1,0 +1,55 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "^5.1.0",
+    "apollo": "^2.27.0",
+    "apollo-boost": "^0.4.7",
+    "apollo-link-state": "^0.4.2",
+    "apollo-upload-client": "^13.0.0",
+    "graphql-tag": "^2.10.3",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-apollo-hooks": "^0.5.0",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-toastify": "^5.5.0",
+    "styled-components": "^5.1.0",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "prebuild": "rm -rf dist",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "precodegen": "apollo schema:download --endpoint=http://localhost:8000/graphql/",
+    "codegen": "apollo codegen:generate src/types/api.d.ts --localSchemaFile=schema.json --includes='src/**/!(*.local).ts' --target typescript --outputFlat",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
